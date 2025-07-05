@@ -96,7 +96,7 @@ const DoctorsPage = () => {
         {doctorsFullData.map(doctor => (
           <motion.div key={doctor.id} className={styles.doctorCard} variants={itemVariants}>
             <div className={styles.doctorCardImageContainer}>
-              <img src={doctor.imageUrl} alt={doctor.name} className={styles.doctorCardImage} />
+              <img src={doctor.imageUrl} alt={doctor.name} className={styles.doctorCardImage} loading="lazy" />
             </div>
             <div className={styles.doctorCardContent}>
               <h2 className={styles.doctorName}>{doctor.name}</h2>

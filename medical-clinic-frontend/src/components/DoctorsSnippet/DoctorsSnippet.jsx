@@ -85,7 +85,7 @@ const DoctorsSnippet = () => {
               variants={cardVariants}
             >
               <div className={styles.doctorImageContainer}>
-                <img src={doctor.imageUrl} alt={doctor.name} className={styles.doctorImage} />
+                <img src={doctor.imageUrl} alt={doctor.name} className={styles.doctorImage} loading="lazy" />
               </div>
               <div className={styles.doctorInfo}>
                 <h3 className={styles.doctorName}>{doctor.name}</h3>

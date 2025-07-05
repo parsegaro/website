@@ -1,0 +1,158 @@
+/* DoctorsPage Component Styles */
+.doctorsPage {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-h1);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.doctorsGridContainer {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .doctorsGridContainer {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  /* We can keep 2 columns for more detailed cards or go to 3 if cards are more compact */
+  /* For now, let's stick to 2 for better readability of details */
+   .doctorsGridContainer {
+     grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+.doctorCard {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column; /* Stack image and content vertically on small screens */
+  overflow: hidden; /* Ensures border radius is applied to image */
+  transition: var(--transition-base);
+}
+
+.doctorCard:hover {
+  box-shadow: var(--box-shadow);
+  transform: translateY(-4px);
+}
+
+.doctorCardImageContainer {
+  width: 100%;
+  height: 300px; /* Fixed height for image container */
+  overflow: hidden; /* Ensure image is clipped if it's larger */
+}
+
+.doctorCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container, may crop */
+  object-position: center top; /* Prioritize top of the image */
+}
+
+.doctorCardContent {
+  padding: var(--spacing-lg);
+  flex-grow: 1; /* Allows content to take available space */
+}
+
+.doctorName {
+  font-size: var(--font-size-h3); /* Larger name for dedicated page */
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.doctorSpecialty {
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.doctorDetails {
+  font-size: var(--font-size-base);
+  color: var(--font-primary-color);
+  line-height: 1.7;
+}
+
+.doctorDetails p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.doctorDetails p:last-child {
+  margin-bottom: 0;
+}
+
+.doctorDetails strong {
+  font-weight: 600; /* SemiBold from Vazirmatn */
+  color: var(--font-primary-color);
+}
+
+.profileLink {
+  display: inline-block;
+  margin-top: var(--spacing-md);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition-base);
+}
+
+.profileLink:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+
+/* Responsive adjustments for card layout if needed */
+@media (min-width: 600px) { /* Example breakpoint for side-by-side image/text in card */
+  /* This example keeps image on top. If side-by-side is desired for card content: */
+  /*
+  .doctorCard {
+    flex-direction: row;
+  }
+  .doctorCardImageContainer {
+    width: 200px; // Fixed width for image
+    height: auto; // Auto height
+    flex-shrink: 0;
+  }
+  .doctorCardImage {
+    height: 100%; // If container has fixed height
+    object-position: center;
+  }
+  .doctorCardContent {
+    padding-left: var(--spacing-lg); // If image is on the left (LTR)
+  }
+  html[dir="rtl"] .doctorCardContent {
+    padding-right: var(--spacing-lg); // If image is on the right (RTL)
+    padding-left: 0;
+  }
+  */
+}

@@ -1,0 +1,167 @@
+/* ContactPage Component Styles */
+.contactPage {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-h1);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contactContentWrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 992px) { /* Switch to two columns on larger screens */
+  .contactContentWrapper {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+  }
+}
+
+.contactInfoSection,
+.contactFormSection {
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.contactInfoSection h3,
+.contactFormSection h3 {
+  font-size: var(--font-size-h3);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.contactInfoSection p {
+  font-size: var(--font-size-base);
+  color: var(--font-primary-color);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.contactInfoSection p strong {
+  font-weight: 600;
+}
+
+.contactInfoSection a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contactInfoSection a:hover {
+  text-decoration: underline;
+}
+
+.mapPlaceholder {
+  margin-top: var(--spacing-lg);
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--font-secondary-color);
+  border: 1px dashed var(--border-color);
+}
+
+.mapPlaceholder iframe {
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-sm);
+}
+
+/* Contact Form Styles */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: var(--font-size-base);
+  color: var(--font-primary-color);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box; /* Important for width 100% and padding */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(64, 224, 208, 0.25); /* Light turquoise focus ring */
+}
+
+.formGroup textarea {
+  resize: vertical; /* Allow vertical resize, disable horizontal */
+  min-height: 120px;
+}
+
+.submitButton {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+  align-self: flex-start; /* Align button to the start (right in RTL) */
+}
+html:not([dir="rtl"]) .submitButton {
+  align-self: flex-start; /* Align button to the start (left in LTR) */
+}
+
+
+.submitButton:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+}
+
+.submissionSuccess {
+  background-color: #e6fff9; /* Light turquoise success message background */
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color-dark);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: var(--font-size-lg);
+}

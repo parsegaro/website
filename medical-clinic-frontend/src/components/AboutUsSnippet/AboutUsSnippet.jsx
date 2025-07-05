@@ -56,7 +56,7 @@ const AboutUsSnippet = () => {
           // Optionally animate image and content separately:
           // initial="hidden" animate={controls} variants={imageVariants}
         >
-          <img src={placeholderImageUrl} alt="درباره کلینیک ما" />
+          <img src={placeholderImageUrl} alt="درباره کلینیک ما" loading="lazy" />
         </motion.div>
         <motion.div
           className={styles.aboutUsContent}

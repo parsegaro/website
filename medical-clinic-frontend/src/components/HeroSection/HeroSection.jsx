@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import styles from './HeroSection.module.css';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -56,9 +57,9 @@ const HeroSection = () => {
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4, ease: "easeOut" } }
             }}
           >
-            <a href="#services" className={styles.ctaButton}>
-              مشاهده خدمات ما
-            </a>
+            <Link to="/appointment" className={styles.ctaButton}>
+              رزرو نوبت آنلاین
+            </Link>
           </motion.div>
         </div>
         {/* Optional: Placeholder for an image or illustration */}
