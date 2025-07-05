@@ -62,16 +62,24 @@
   margin-right: 0;
 }
 
-.nav a {
+.navLink { /* Renamed from .nav a for clarity with NavLink */
   text-decoration: none;
   color: var(--font-primary-color);
   font-weight: 500;
   transition: var(--transition-base);
+  padding: var(--spacing-xs) var(--spacing-sm); /* Add some padding for better click area */
+  border-radius: var(--border-radius);
 }
 
-.nav a:hover,
-.nav a.active { /* Placeholder for active link styling */
+.navLink:hover {
   color: var(--primary-color);
+  background-color: var(--secondary-color); /* Subtle background on hover */
+}
+
+.activeLink { /* Style for the active NavLink */
+  color: var(--primary-color);
+  font-weight: bold; /* Make active link bolder */
+  /* background-color: var(--primary-color-lightest); // Example: a very light shade of primary */
 }
 
 .menuToggle {

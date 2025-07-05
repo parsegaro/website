@@ -1,0 +1,98 @@
+/* ServicesPage Component Styles */
+.servicesPage {
+  padding: var(--spacing-lg) var(--spacing-md); /* Standard page padding */
+  max-width: 1140px; /* Consistent max width */
+  margin: 0 auto; /* Center the page content */
+  min-height: calc(100vh - 160px); /* Approximate full height minus header/footer */
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-h1);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.servicesListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl); /* Space between service items */
+}
+
+.serviceItem {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow-sm);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column; /* Icon above text on small screens */
+  align-items: center; /* Center icon on small screens */
+  text-align: center; /* Center text on small screens */
+  transition: var(--transition-base);
+}
+
+.serviceItem:hover {
+  box-shadow: var(--box-shadow);
+  transform: translateY(-3px);
+}
+
+.serviceItemIcon {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.serviceSvgIcon { /* Re-using class from ServicesSection for consistency */
+  width: 60px; /* Slightly larger icons for this page */
+  height: 60px;
+}
+
+.serviceItemContent {
+  width: 100%;
+}
+
+.serviceItemTitle {
+  font-size: var(--font-size-h3); /* Using h3 for service titles on this page */
+  color: var(--font-primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceItemDescription {
+  font-size: var(--font-size-base);
+  color: var(--font-secondary-color);
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .serviceItem {
+    flex-direction: row; /* Icon beside text on larger screens */
+    align-items: flex-start; /* Align items to the top */
+    text-align: right; /* For RTL */
+  }
+
+  html[dir="rtl"] .serviceItemIcon {
+    margin-left: var(--spacing-lg); /* Space between icon and text in RTL */
+    margin-bottom: 0;
+  }
+  html:not([dir="rtl"]) .serviceItemIcon {
+    margin-right: var(--spacing-lg); /* Space between icon and text in LTR */
+    margin-bottom: 0;
+  }
+
+  .serviceItemContent {
+    /* Text alignment handled by parent .serviceItem */
+  }
+}

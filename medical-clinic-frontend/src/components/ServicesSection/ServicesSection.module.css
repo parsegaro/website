@@ -75,22 +75,31 @@
   background-color: var(--background-color);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-md); /* Adjusted padding */
   text-align: center;
-  box-shadow: var(--box-shadow-sm);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Slightly adjusted shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .serviceCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box-shadow);
+  transform: translateY(-6px); /* Slightly more lift */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12); /* Enhanced shadow on hover */
 }
 
 .serviceIcon {
   margin-bottom: var(--spacing-md);
-  /* Style for actual icons will go here. For placeholder: */
+  color: var(--primary-color); /* Icon color */
+  display: flex; /* To help center the SVG if needed */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
 }
 
+.serviceSvgIcon { /* Class for the SVG elements themselves */
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+/* Remove or comment out .serviceIconPlaceholder if no longer used
 .serviceIconPlaceholder {
   width: 60px;
   height: 60px;
@@ -102,9 +111,9 @@
   justify-content: center;
   font-size: var(--font-size-xl);
   font-weight: bold;
-  margin: 0 auto var(--spacing-md) auto; /* Center the icon */
+  margin: 0 auto var(--spacing-md) auto;
 }
-
+*/
 
 .serviceTitle {
   font-size: var(--font-size-lg); /* Adjusted from h3 to lg for card context */

@@ -107,14 +107,27 @@ img {
   .container { max-width: 1140px; }
 }
 
-/* Add Vazirmatn font-face. Assuming it will be added to src/assets/fonts */
-/* You will need to download Vazirmatn and place it in the specified path */
-/* For example, if you have Vazirmatn-Regular.woff2 */
-/*
+/* Add Vazirmatn font-face */
 @font-face {
   font-family: 'Vazirmatn';
   src: url('./assets/fonts/Vazirmatn-Regular.woff2') format('woff2');
-  font-weight: normal;
+  font-weight: normal; /* 400 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./assets/fonts/Vazirmatn-Medium.woff2') format('woff2'); /* Assuming you have Medium weight */
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./assets/fonts/Vazirmatn-SemiBold.woff2') format('woff2'); /* Assuming you have SemiBold weight */
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -122,11 +135,10 @@ img {
 @font-face {
   font-family: 'Vazirmatn';
   src: url('./assets/fonts/Vazirmatn-Bold.woff2') format('woff2');
-  font-weight: bold;
+  font-weight: bold; /* 700 */
   font-style: normal;
   font-display: swap;
 }
-*/
 
 /* Ensure the main App component takes up full height */
 #root {

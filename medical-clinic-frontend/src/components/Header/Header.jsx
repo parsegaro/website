@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -10,12 +11,16 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   // Close mobile menu if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target) &&
           menuToggleRef.current && !menuToggleRef.current.contains(event.target)) {
-        setIsMobileMenuOpen(false);
+        closeMobileMenu();
       }
     };
 
@@ -30,19 +35,25 @@ const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Helper for NavLink active class
+  const getNavLinkClass = ({ isActive }) => {
+    return isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink;
+  };
+
   return (
     <header className={styles.header}>
       <div className={`${styles.container} ${styles.headerContainer}`}>
         <div className={styles.logo}>
-          <a href="/">کلینیک پزشکی شما</a>
+          <Link to="/" onClick={closeMobileMenu}>کلینیک پزشکی شما</Link>
         </div>
         <nav ref={navRef} className={`${styles.nav} ${isMobileMenuOpen ? styles.active : ''}`}>
           <ul>
-            <li><a href="/" onClick={() => setIsMobileMenuOpen(false)}>صفحه اصلی</a></li>
-            <li><a href="#services" onClick={() => setIsMobileMenuOpen(false)}>خدمات</a></li>
-            <li><a href="#doctors" onClick={() => setIsMobileMenuOpen(false)}>پزشکان</a></li>
-            <li><a href="#blog" onClick={() => setIsMobileMenuOpen(false)}>وبلاگ</a></li>
-            <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>تماس با ما</a></li>
+            <li><NavLink to="/" className={getNavLinkClass} onClick={closeMobileMenu} end>صفحه اصلی</NavLink></li>
+            <li><NavLink to="/services" className={getNavLinkClass} onClick={closeMobileMenu}>خدمات</NavLink></li>
+            {/* Placeholder links for now, will be updated when pages are created */}
+            <li><NavLink to="/doctors" className={getNavLinkClass} onClick={closeMobileMenu}>پزشکان</NavLink></li>
+            <li><NavLink to="/blog" className={getNavLinkClass} onClick={closeMobileMenu}>وبلاگ</NavLink></li>
+            <li><NavLink to="/contact" className={getNavLinkClass} onClick={closeMobileMenu}>تماس با ما</NavLink></li>
           </ul>
         </nav>
         <button

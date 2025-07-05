@@ -1,0 +1,166 @@
+/* DoctorsSnippet Component Styles */
+.doctorsSnippet {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--secondary-color); /* Light background for contrast */
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: var(--font-size-h2);
+  color: var(--font-primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.doctorsGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 600px) { /* Adjust breakpoint as needed */
+  .doctorsGrid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+}
+
+@media (min-width: 992px) {
+  .doctorsGrid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for snippet */
+  }
+}
+
+.doctorCard {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Consistent shadow */
+  overflow: hidden; /* To ensure border-radius is respected by image */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctorCard:hover {
+  transform: translateY(-6px); /* Consistent lift */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12); /* Consistent hover shadow */
+}
+
+.doctorImageContainer {
+  width: 100%;
+  /* Fixed aspect ratio for image container could be good, e.g., padding-top: 100% for 1:1 */
+  /* Or set a fixed height and use object-fit on image */
+  height: 280px; /* Example fixed height */
+  overflow: hidden;
+}
+
+.doctorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area, might crop */
+  object-position: center top; /* Focus on the top of the image */
+}
+
+.doctorInfo {
+  padding: var(--spacing-lg);
+  text-align: center;
+  flex-grow: 1; /* Allows this part to grow if cards have different text length */
+  display: flex;
+  flex-direction: column;
+}
+
+.doctorName {
+  font-size: var(--font-size-lg); /* Using lg as it's a card title */
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.doctorSpecialty {
+  font-size: var(--font-size-base);
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.doctorBioSnippet {
+  font-size: var(--font-size-sm);
+  color: var(--font-secondary-color);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1; /* Allows bio to push profileLink down */
+}
+
+.profileLink {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: var(--font-size-sm);
+  margin-top: auto; /* Pushes link to the bottom of .doctorInfo */
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid transparent; /* for hover effect */
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+}
+
+.profileLink:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+  /* background-color: var(--primary-color-light); */
+  /* border-color: var(--primary-color); */
+}
+
+.seeAllLinkContainer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.seeAllLink {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: var(--transition-base);
+  border: 2px solid var(--primary-color);
+}
+
+.seeAllLink:hover {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+  color: white;
+  text-decoration: none;
+}

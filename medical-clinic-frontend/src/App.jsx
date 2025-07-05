@@ -1,22 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection';
-import ServicesSection from './components/ServicesSection/ServicesSection';
 import Footer from './components/Footer/Footer';
+
+// Page Components
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage/ServicesPage';
+
 // We are not using App.css anymore, global styles are in index.css
-// import './App.css'; // This line can be removed if it exists
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
       <main>
-        <HeroSection />
-        <ServicesSection />
-        {/* Other sections will be added here later */}
+        <Routes>
+          <Route path="/" element={<HomePage />} /> {/* Use HomePage component */}
+          <Route path="/services" element={<ServicesPage />} />
+          {/* Define other routes here later, e.g., /doctors, /blog, /contact */}
+        </Routes>
       </main>
       <Footer />
-    </>
+    </Router>
   );
 }
 
