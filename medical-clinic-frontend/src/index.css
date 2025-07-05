@@ -1,0 +1,136 @@
+/* Global styles and CSS variables */
+
+:root {
+  /* Color Palette */
+  --font-primary-color: #333333; /* Dark gray for text */
+  --font-secondary-color: #555555; /* Medium gray for less important text */
+  --background-color: #ffffff; /* White background */
+  --primary-color: #40E0D0; /* Turquoise - Main brand color */
+  --primary-color-dark: #30C0B0; /* Darker shade of turquoise for hover/active states */
+  --secondary-color: #f4f7f6; /* Light gray/off-white for secondary backgrounds */
+  --accent-color: #FF6B6B; /* An accent color for specific highlights, can be adjusted */
+  --border-color: #eeeeee; /* Light gray for borders */
+
+  /* Typography */
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-persian: 'Vazirmatn', var(--font-family-sans-serif); /* Vazirmatn for Persian, fallback to sans-serif */
+  --font-family-base: var(--font-family-persian);
+
+  /* Font Sizes */
+  --font-size-base: 1rem; /* Typically 16px */
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xl: 1.5rem;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.75rem;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  /* Borders */
+  --border-radius: 0.25rem;
+
+  /* Box Shadows */
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-base: all 0.2s ease-in-out;
+}
+
+/* Basic Reset and Body Styles */
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--font-primary-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl; /* Set default direction to right-to-left for Persian */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600; /* A bit bolder for headings */
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Utility Classes (Optional - can be expanded) */
+.container {
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+/* Add Vazirmatn font-face. Assuming it will be added to src/assets/fonts */
+/* You will need to download Vazirmatn and place it in the specified path */
+/* For example, if you have Vazirmatn-Regular.woff2 */
+/*
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./assets/fonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./assets/fonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* Ensure the main App component takes up full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

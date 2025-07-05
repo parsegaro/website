@@ -1,0 +1,130 @@
+/* Header Component Styles */
+.header {
+  background-color: var(--background-color);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.container { /* Re-defining container here for component-specific adjustments if needed */
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-right: var(--spacing-lg); /* For RTL, margin-right pushes items apart from right to left */
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--font-primary-color);
+  font-weight: 500;
+  transition: var(--transition-base);
+}
+
+.nav a:hover,
+.nav a.active { /* Placeholder for active link styling */
+  color: var(--primary-color);
+}
+
+.menuToggle {
+  display: none; /* Hidden by default, shown on small screens */
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+.menuToggle svg {
+  width: 24px; /* Ensure SVG size is controlled */
+  height: 24px;
+}
+
+/* Responsive adjustments for navigation */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Hide nav on small screens, to be toggled by JS later */
+    /*
+    For a toggled menu, you would typically change display to block or flex,
+    position it absolutely, and style it as a dropdown or sidebar.
+    This will be implemented with JavaScript later.
+    For now, it's just hidden.
+    */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-md);
+  }
+
+  .nav.active { /* Class to be added by JS to show the menu */
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .nav li {
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .nav li:last-child {
+    margin-bottom: 0;
+  }
+
+  .menuToggle {
+    display: block; /* Show menu toggle button on small screens */
+  }
+}
