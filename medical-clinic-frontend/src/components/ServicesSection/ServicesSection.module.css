@@ -1,0 +1,134 @@
+/* ServicesSection Component Styles */
+.servicesSection {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--background-color); /* Or a very light gray like --secondary-color */
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: var(--font-size-h2);
+  color: var(--font-primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on large screens, adjust if 4 cards */
+     /* If you have exactly 4 cards and want them in a 2x2 grid on larger screens: */
+    /* grid-template-columns: repeat(2, 1fr); */
+  }
+}
+@media (min-width: 1200px) {
+  /* For 4 cards, maybe you want 4 columns or keep it at 3 for more space */
+  .servicesGrid {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on very large screens */
+     /* Or if you prefer fewer columns with more space: */
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+}
+
+
+.serviceCard {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  text-align: center;
+  box-shadow: var(--box-shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+}
+
+.serviceIcon {
+  margin-bottom: var(--spacing-md);
+  /* Style for actual icons will go here. For placeholder: */
+}
+
+.serviceIconPlaceholder {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  margin: 0 auto var(--spacing-md) auto; /* Center the icon */
+}
+
+
+.serviceTitle {
+  font-size: var(--font-size-lg); /* Adjusted from h3 to lg for card context */
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceDescription {
+  font-size: var(--font-size-base);
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7; /* More line height for readability in cards */
+}
+
+.serviceLink {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: var(--font-size-sm);
+  transition: var(--transition-base);
+}
+
+.serviceLink:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}

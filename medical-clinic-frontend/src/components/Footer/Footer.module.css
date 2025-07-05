@@ -1,0 +1,72 @@
+/* Footer Component Styles */
+.footer {
+  background-color: var(--secondary-color); /* Using a light gray for footer background */
+  color: var(--font-secondary-color);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto; /* Pushes footer to the bottom if content is short */
+}
+
+.container { /* Re-defining container here for component-specific adjustments */
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on small screens */
+  align-items: center;
+  text-align: center;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.links {
+  margin-top: var(--spacing-sm);
+}
+
+.links a {
+  color: var(--font-secondary-color);
+  text-decoration: none;
+  margin: 0 var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-base);
+}
+
+.links a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Adjust layout for larger screens */
+@media (min-width: 768px) {
+  .footerContainer {
+    flex-direction: row; /* Align items horizontally */
+    justify-content: space-between;
+    text-align: right; /* For RTL, text aligns to the right */
+  }
+
+  .links {
+    margin-top: 0;
+    text-align: left; /* For RTL, links align to the left of their container */
+  }
+}
