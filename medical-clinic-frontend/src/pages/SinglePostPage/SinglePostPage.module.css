@@ -1,0 +1,135 @@
+/* SinglePostPage Component Styles */
+.singlePostPage {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 800px; /* Optimal width for reading text */
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+}
+
+.postHeader {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center; /* Center title and meta for single post */
+}
+
+.postTitle {
+  font-size: var(--font-size-h1); /* Larger title for single post */
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+}
+
+.postMeta {
+  font-size: var(--font-size-base);
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.postImageContainer {
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Clip image to border-radius */
+  box-shadow: var(--box-shadow-sm);
+}
+
+.postImage {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 450px; /* Max height for the image */
+  object-fit: cover;
+  display: block; /* Remove extra space below image */
+}
+
+.postContent {
+  font-size: var(--font-size-base); /* Base size for readability */
+  line-height: 1.8; /* Generous line height for text blocks */
+  color: var(--font-primary-color);
+}
+
+.postContent p {
+  margin-bottom: var(--spacing-md);
+}
+
+.postContent h2, .postContent h3, .postContent h4 {
+  color: var(--font-primary-color);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.postContent h2 { font-size: 1.8rem; }
+.postContent h3 { font-size: 1.5rem; }
+.postContent h4 { font-size: 1.2rem; }
+
+
+.postContent ul, .postContent ol {
+  margin-bottom: var(--spacing-md);
+  padding-right: var(--spacing-lg); /* For RTL, padding on the right */
+}
+html:not([dir="rtl"]) .postContent ul,
+html:not([dir="rtl"]) .postContent ol {
+  padding-left: var(--spacing-lg);
+  padding-right: 0;
+}
+
+
+.postContent li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.postContent a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.postContent a:hover {
+  color: var(--primary-color-dark);
+}
+
+.postContent blockquote {
+  border-right: 3px solid var(--primary-color); /* For RTL */
+  padding-right: var(--spacing-md); /* For RTL */
+  margin-right: 0; /* For RTL */
+  margin-left: 0; /* Reset margin-left */
+  font-style: italic;
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-md);
+}
+html:not([dir="rtl"]) .postContent blockquote {
+  border-left: 3px solid var(--primary-color);
+  padding-left: var(--spacing-md);
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0; /* Reset margin-right */
+}
+
+
+.backLinkContainer {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition-base);
+}
+
+.backLink:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}

@@ -1,11 +1,11 @@
 /* HeroSection Component Styles */
 .hero {
   background-color: var(--secondary-color); /* Light turquoise or a gradient could also work well */
-  padding: var(--spacing-xxl) 0; /* Large padding for impact */
+  padding: var(--spacing-xxl) 0 var(--spacing-xl) 0; /* Adjusted padding */
   text-align: center; /* Center align text by default */
   display: flex; /* To center content vertically if needed, along with align-items */
   align-items: center;
-  min-height: 70vh; /* Give it significant height */
+  min-height: calc(70vh - 80px); /* Adjust height considering header height (approx 80px) */
 }
 
 .container {

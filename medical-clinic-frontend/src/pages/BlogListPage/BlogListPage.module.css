@@ -1,0 +1,148 @@
+/* BlogListPage Component Styles */
+.blogListPage {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-h1);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--font-secondary-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blogGridContainer {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .blogGridContainer {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .blogGridContainer {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on large screens */
+  }
+}
+
+.blogCard {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  border: 1px solid var(--border-color);
+  overflow: hidden; /* Ensures border radius is applied to children */
+  transition: var(--transition-base);
+  display: flex; /* To make the Link wrapper fill the card */
+  flex-direction: column;
+}
+
+.blogCard:hover {
+  box-shadow: var(--box-shadow);
+  transform: translateY(-4px);
+}
+
+.cardLinkWrapper {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make link wrapper fill card height */
+}
+
+.blogCardImageContainer {
+  width: 100%;
+  height: 200px; /* Fixed height for image container */
+  overflow: hidden;
+  position: relative; /* For category tag positioning */
+}
+
+.blogCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.blogCard:hover .blogCardImage {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.categoryTag {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm); /* For RTL */
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+html:not([dir="rtl"]) .categoryTag {
+  right: auto;
+  left: var(--spacing-sm);
+}
+
+
+.blogCardContent {
+  padding: var(--spacing-lg);
+  flex-grow: 1; /* Allow content to take up remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.blogTitle {
+  font-size: var(--font-size-lg);
+  color: var(--font-primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.blogMeta {
+  font-size: var(--font-size-sm);
+  color: var(--font-secondary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.blogExcerpt {
+  font-size: var(--font-size-base);
+  color: var(--font-secondary-color);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1; /* Push read more link to bottom */
+}
+
+.readMoreLink {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  margin-top: auto; /* Pushes to bottom if excerpt is short */
+  transition: var(--transition-base);
+}
+
+.readMoreLink:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
